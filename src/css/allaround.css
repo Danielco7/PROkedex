@@ -1,0 +1,203 @@
+.types{
+  font-family: pokemontype;
+  font-size: 14px;
+  padding-top: 5px;
+  width: 83px;
+  height: 18px;
+  display: inline-block;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 2px 2px #303030;
+  overflow-x: hidden;
+  border-radius: 5px;
+  margin-top: -5px;
+  margin-left: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.types_small{
+    font-family: pokemontype;
+    font-size: 10px;
+    padding-top: 5px;
+    width: 63px;
+    height: 14px;
+    display: inline-block;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 1px 1px #303030;
+    overflow-x: hidden;
+    border-radius: 5px;
+  }
+  .types_small:hover{
+    border-bottom-style: solid;
+    border-bottom-color: rgb(255, 80, 80);
+    border-spacing: 15px;
+  }
+  .fire{
+    background: #ff5430;
+    border:3px solid #ba3710;
+  
+  }
+  .normal{
+    background: #bfbf9b;
+    border:3px solid #a8a878;
+  }
+  .water{
+    background: #6890f0;
+    border:3px solid #6f89c9;
+  }
+  .grass{
+    background: #78c850;
+    border:3px solid #417f42;
+  }
+  .electric{
+    background: #f8d030;
+    border:3px solid #a98b13;
+  }
+  .ice{
+    background: #98d8d8;
+    border:3px solid #92a7b2;
+  }
+  .fighting{
+    background: #c03028;
+    border:3px solid #6d3b33;
+  }
+  .poison{
+    background: #9c409c;
+    border:3px solid #302766;
+  }
+  .ground{
+    background: #ceae5c;
+    border:3px solid #72640d;
+  }
+  .flying{
+    background: #a890f0;
+    border:3px solid #30549b;
+  }
+  .psychic{
+    background: #f85888;
+    border:3px solid #662730;
+  }
+  .bug{
+    background: #a8b820;
+    border:3px solid #75890c;
+  }
+  .rock{
+    background: #a58935;
+    border:3px solid #847532;
+  }
+  .ghost{
+    background: #705898;
+    border:3px solid #322969;
+  }
+  .dragon{
+    background: #7038f7;
+    border:3px solid #4a3895;
+  }
+  .dark{
+    background: #705848;
+    border:3px solid #56493e;
+  }
+  .steel{
+    background: #b8b8d0;
+    border:3px solid #847b7e;
+  }
+  .fairy{
+    background: #ff65d5;
+    border:3px solid #bc758f;
+  }
+ input[type="range"] { 
+    -webkit-appearance: none;
+    position: relative;
+    overflow: hidden;
+    height: 20px;
+    width: 200px;
+    border-radius: 10px;
+    left: 60px;
+    top: -22px;
+  }
+  ::-webkit-slider-runnable-track {
+    background: rgb(190, 190, 190);
+  }
+  ::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px; 
+    height: 20px;
+    margin-left: 10px;
+    border-radius: 15px;
+    margin-left: -2px;
+  }
+  
+  .fire_stats::-webkit-slider-thumb{
+    background: #ff5430;
+    box-shadow: -210px 0 0 200px #ff5430
+  
+  }
+  .normal_stats::-webkit-slider-thumb{
+    background: #bfbf9b;
+    box-shadow: -210px 0 0 200px #bfbf9b
+  }
+  .water_stats::-webkit-slider-thumb{
+    background: #6890f0;
+    box-shadow: -210px 0 0 200px #6890f0
+  }
+  .grass_stats::-webkit-slider-thumb{
+    background: #78c850;
+    box-shadow: -210px 0 0 200px #78c850
+  }
+  .electric_stats::-webkit-slider-thumb{
+    background: #f8d030;
+    box-shadow: -210px 0 0 200px #f8d030
+  }
+  .ice_stats::-webkit-slider-thumb{
+    background: #98d8d8;
+    box-shadow: -210px 0 0 200px #98d8d8
+  }
+  .fighting_stats::-webkit-slider-thumb{
+    background: #c03028;
+    box-shadow: -210px 0 0 200px #c03028
+  }
+  .poison_stats::-webkit-slider-thumb{
+    background: #9c409c;
+    box-shadow: -210px 0 0 200px #9c409c
+  }
+  .ground_stats::-webkit-slider-thumb{
+    background: #ceae5c;
+    box-shadow: -210px 0 0 200px #ceae5c
+  }
+  .flying_stats::-webkit-slider-thumb{
+    background: #a890f0;
+    box-shadow: -210px 0 0 200px #a890f0
+  }
+  .psychic_stats::-webkit-slider-thumb{
+    background: #f85888;
+    box-shadow: -210px 0 0 200px #f85888
+  }
+  .bug_stats::-webkit-slider-thumb{
+    background: #a8b820;
+    box-shadow: -210px 0 0 200px #a8b820
+  }
+  .rock_stats::-webkit-slider-thumb{
+    background: #a58935;
+    box-shadow: -210px 0 0 200px #a58935
+  }
+  .ghost_stats::-webkit-slider-thumb{
+    background: #705898;
+    box-shadow: -210px 0 0 200px #705898
+  }
+  .dragon_stats::-webkit-slider-thumb{
+    background: #7038f7;
+    box-shadow: -210px 0 0 200px #7038f7
+  }
+  .dark_stats::-webkit-slider-thumb{
+    background: #705848;
+    box-shadow: -210px 0 0 200px #705848
+  }
+  .steel_stats::-webkit-slider-thumb{
+    background: #b8b8d0;
+    box-shadow: -210px 0 0 200px #b8b8d0
+  }
+  .fairy_stats::-webkit-slider-thumb{
+    background: #ff65d5;
+    box-shadow: -210px 0 0 200px #ff65d5
+  }
