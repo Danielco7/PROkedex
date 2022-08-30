@@ -69,6 +69,7 @@ function MainComp() {
       </div>
       <Routes >
       <Route exact path='/pokemon' element={<All_Pokemons />} />
+      <Route exact path='/' element={<All_Pokemons />} />
         <Route path='/pokemon/:id' element={<Pokemon_Display />} />
         <Route exact path='/move' element={<All_Moves />} />
         <Route exact path='/move/:id' element={<Move_Display/>} />
