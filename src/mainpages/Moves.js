@@ -10,21 +10,21 @@ function Moves(props) {
 
     useEffect(() => {
         async function getPokemons() {
-
-                      const { data } = await Axios.get(`https://pokeapi.co/api/v2/move/${props.key2}`)
-                      console.log(data.flavor_text_entries[1].flavor_text);
-            await setmove(data)
-            await setmove({
-                name: props.key2,
-                number: data.id,
-                brif: data.flavor_text_entries[1].flavor_text,
-                type1: data.type.name,
-                target: data.target.name,
-                power: data.power,
-                pp: data.pp,
-                damage_class: data.damage_class.name
-            })
-
+          const { data } = await Axios.get(`https://pokeapi.co/api/v2/move/${props.key2}`)
+        //   console.log(data.flavor_text_entries[1].flavor_text);
+          if (data.generation.name=="generation-i") {
+              await setmove({
+                  name: props.key2,
+                  number: data.id,
+                  brif: data.flavor_text_entries[1].flavor_text,
+                  type1: data.type.name,
+                  target: data.target.name,
+                  power: data.power,
+                  pp: data.pp,
+                  damage_class: data.damage_class.name
+                })
+            }
+                
         
      }
          getPokemons()
@@ -32,6 +32,8 @@ function Moves(props) {
      
      function handleClick(e) {
         navigate(`/move/${e}`);
+        window.location.reload();
+        window.scrollTo(0,0);
      }
      function handleClick_Type(e) {
         navigate(`/type/${e}`);
@@ -40,7 +42,9 @@ function Moves(props) {
      }
 
 
-    return <div className='moves_cont'>
+    return <div>
+     {move.name != undefined?<div>
+    <div className='moves_cont'>
         <table className='move_row'>
             <tbody>
                 <tr >
@@ -53,10 +57,8 @@ function Moves(props) {
                 </tr>
             </tbody>
         </table>
-
-            
-        
-
+    </div>
+    </div>:null}
     </div>
 }
 export default Moves

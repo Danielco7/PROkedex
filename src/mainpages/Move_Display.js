@@ -7,6 +7,8 @@ import Pokemons from './pokmons';
 
 function Move_Display(match) {
     const [pokemonsarray, setpokemonsarray] = useState([])
+    const [move, setmove] = useState({})
+
 
 
     const navigate = useNavigate();
@@ -15,6 +17,7 @@ function Move_Display(match) {
 
     
     useEffect(() => {
+        
         async function getMove() {
             console.log(params.id);
 
@@ -24,11 +27,19 @@ function Move_Display(match) {
                 const elem2= await Number(element.url.slice(34,element.url.length-1))
                 if (elem2<152) {
                         await setpokemonsarray(oldArray => [...oldArray, elem2])
-                    
                 }
-
-                
             }
+            await setmove(data)
+            await setmove({
+                name: params.id,
+                number: data.id,
+                brif: data.flavor_text_entries[1].flavor_text,
+                type1: data.type.name,
+                target: data.target.name,
+                power: data.power,
+                pp: data.pp,
+                damage_class: data.damage_class.name
+            })
      }
          getMove()
      }, [])
@@ -39,13 +50,19 @@ function Move_Display(match) {
      }
     
 
-    return <div>
-        ljkahsdlkashdlkasjd
+    return <div className='pokemon_info_cont'>
+   <h1 className='pokemon_displayer_name'>{move.name}</h1>
         <br></br>
         <br></br>
-        <div >
-   {params.id}
+        <div className='pokemon_data'>
+        <div> <h4>{move.number}</h4></div>
+        <div> <h4>{move.type1}</h4></div>
+        <div> <h4>{move.target}</h4></div>
+        <div> <h4>{move.power}</h4></div>
+        <div> <h4>{move.pp}</h4></div>
+        <div><h4>{move.damage_class}</h4></div> 
         </div>
+        
         {pokemonsarray.length >1 ?  <div className='pokemons_display'>
         {pokemonsarray.map((item,i) => {
             return <div >

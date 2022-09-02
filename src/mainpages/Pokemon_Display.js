@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {useParams,useNavigate} from "react-router-dom";
 import Axios from 'axios'
+import Moves from './Moves';
 
 
 
@@ -14,6 +15,7 @@ function Pokemon_Display(match) {
         stats:[],
         type1:'',
         type2:'',
+        moves:[],
     })
     const [pokemonbefor, setpokemonbefor] = useState({
         id:'',
@@ -33,7 +35,20 @@ function Pokemon_Display(match) {
         async function getPokemon() {
 
             const { data } = await Axios.get(`https://pokeapi.co/api/v2/pokemon/${params.id}`)
-            console.log(data.stats);
+            const TM_move=[]
+            const LV_move=[]
+            for (let i = 0; i < data.moves.length; i++) {
+                const element = data.moves[i];
+                if (element.version_group_details[0].version_group.name =="red-blue") {
+                    if (element.version_group_details[0].move_learn_method.name=="machine") {
+                        TM_move.push(element) 
+                        console.log(TM_move);
+                    }else{
+                        LV_move.push(element)
+                        console.log(LV_move);
+                    }
+                }
+            }
             await setpokemon({
                 name: data.name,
                 number: data.id,
@@ -42,7 +57,10 @@ function Pokemon_Display(match) {
                 weight: data.weight,
                 stats: data.stats,
                 type1: data.types[0].type.name,
+                LV_moves: LV_move,
+                TM_moves: TM_move,
             })
+            console.log(data.moves);
             if (data.types.length>1) {
                 await setpokemon({
                     name: data.name,
@@ -53,6 +71,8 @@ function Pokemon_Display(match) {
                     stats: data.stats,
                     type1: data.types[0].type.name,
                     type2: data.types[1].type.name,
+                    LV_moves: LV_move,
+                    TM_moves: TM_move,
                 })
             }
             if (data.id!==1) {
@@ -80,9 +100,10 @@ function Pokemon_Display(match) {
 
 
      function handleClick_Type(e) {
-        navigate(`/type/${e}`);
-        window.location.reload();
-        window.scrollTo(0, 0);
+         console.log(pokemon);
+        // navigate(`/type/${e}`);
+        // window.location.reload();
+        // window.scrollTo(0, 0);
      }
     
 
@@ -109,8 +130,37 @@ function Pokemon_Display(match) {
        <p>height: {pokemon.height}</p>
        <p>weight: {pokemon.weight}</p>
 
-   </div>
- 
+   </div><br></br>
+    <div >
+    <h1>move lernt by this pokemon</h1>
+    <table className='moves_display'>
+    <tbody>
+         <tr className='movestotheleft'>
+             <td style={{verticalalign: "top"}}>
+    {pokemon.LV_moves.map((item,i) => {
+        return <div >
+            <tr>
+                <p>LV:{pokemon.LV_moves[i].version_group_details[0].level_learned_at}</p>
+                 <td>
+                      <Moves  key2={item.move.name} key={i}   />
+                            </td> </tr></div>
+               })}</td>
+               <td>
+    {pokemon.TM_moves.map((item,i) => {
+        return <div className='movestotheright'>
+            <tr>
+                <p>TM</p>
+                 <td>
+                      <Moves  key2={item.move.name} key={i}   />
+                            </td> </tr></div>
+               })}
+               </td>
+               </tr>
+               </tbody>
+
+</table>
+    </div>
+
     </div>:null}
     </div>;
 }
