@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/Prokedex/static/css/main.c782b6ce.css",
-    "main.js": "/Prokedex/static/js/main.9685d6b3.js",
+    "main.css": "/Prokedex/static/css/main.2094bccb.css",
+    "main.js": "/Prokedex/static/js/main.daf5aaba.js",
     "static/js/787.c4e7f8f9.chunk.js": "/Prokedex/static/js/787.c4e7f8f9.chunk.js",
     "static/media/Pokemon Solid.ttf": "/Prokedex/static/media/Pokemon Solid.5d60be1f7ff5fcc21fc1.ttf",
     "static/media/logo.png": "/Prokedex/static/media/logo.46bc5ea190b04531bf42.png",
     "static/media/Pokemon GB.ttf": "/Prokedex/static/media/Pokemon GB.6211ee48ea626f34681e.ttf",
     "static/media/logo.svg": "/Prokedex/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/Prokedex/index.html",
-    "main.c782b6ce.css.map": "/Prokedex/static/css/main.c782b6ce.css.map",
-    "main.9685d6b3.js.map": "/Prokedex/static/js/main.9685d6b3.js.map",
+    "main.2094bccb.css.map": "/Prokedex/static/css/main.2094bccb.css.map",
+    "main.daf5aaba.js.map": "/Prokedex/static/js/main.daf5aaba.js.map",
     "787.c4e7f8f9.chunk.js.map": "/Prokedex/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c782b6ce.css",
-    "static/js/main.9685d6b3.js"
+    "static/css/main.2094bccb.css",
+    "static/js/main.daf5aaba.js"
   ]
 }
