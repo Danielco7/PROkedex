@@ -67,8 +67,8 @@ function SearchBar({ placeholder, data, data2 ,data3 }) {
       navigate(`/move/${e}`);
       window.location.reload();
    }
-  return (
-    <div className="search">
+  return <div className="search">
+    
       <div className="searchInputs">
         <input
           type="text"
@@ -107,7 +107,6 @@ function SearchBar({ placeholder, data, data2 ,data3 }) {
         </div>
       )}
     </div>
-  );
 }
 
 export default SearchBar;

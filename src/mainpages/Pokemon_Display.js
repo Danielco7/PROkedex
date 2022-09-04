@@ -136,20 +136,20 @@ function Pokemon_Display(match) {
     <table className='moves_display'>
     <tbody>
          <tr className='movestotheleft'>
-             <td style={{verticalalign: "top"}}>
+             <td > <h2 className='pokemon_moves_headers' >Moves learnt by level up</h2>
     {pokemon.LV_moves.map((item,i) => {
-        return <div >
+        return <div className='move_row' >
             <tr>
-                <p>LV:{pokemon.LV_moves[i].version_group_details[0].level_learned_at}</p>
+                <p style={{width: "45px"}}>LV: {pokemon.LV_moves[i].version_group_details[0].level_learned_at}</p>
                  <td>
                       <Moves  key2={item.move.name} key={i}   />
                             </td> </tr></div>
                })}</td>
-               <td>
+               <td><h2 className='pokemon_moves_headers'>Moves learnt by TM</h2>
     {pokemon.TM_moves.map((item,i) => {
-        return <div className='movestotheright'>
+        return <div className='move_row' >
             <tr>
-                <p>TM</p>
+                <p style={{width: "45px"}}>TM</p>
                  <td>
                       <Moves  key2={item.move.name} key={i}   />
                             </td> </tr></div>

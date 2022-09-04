@@ -45,18 +45,16 @@ function Moves(props) {
     return <div>
      {move.name != undefined?<div>
     <div className='moves_cont'>
-        <table className='move_row'>
-            <tbody>
+       
                 <tr >
                     <td className='move_name' onClick={()=>handleClick(move.name)}>{move.name}</td>
-                    <td onClick={()=>handleClick_Type(move.type1)} className={`${move.type1} types_small move_type`}>{move.type1}</td>
-                    <td className='move_brif'>{move.brif}</td>
+                    <td onClick={()=>handleClick_Type(move.type1)} className={`${move.type1} types_small`}>{move.type1}</td>
                     {move.power!==null?<td className='move_numbers'>{move.power}</td>:<td className='move_numbers'>-</td>}
                     {move.pp!==null?<td className='move_numbers'>{move.pp}</td>:<td className='move_numbers'>-</td>}
-                    {move.damage_class!==null?<td>{move.damage_class}</td>:<td>-</td>}
+                    {move.damage_class!==null?<td className='move_class'>{move.damage_class}</td>:<td>-</td>}
+                    <td className='move_brif'>{move.brif}</td>
                 </tr>
-            </tbody>
-        </table>
+        
     </div>
     </div>:null}
     </div>

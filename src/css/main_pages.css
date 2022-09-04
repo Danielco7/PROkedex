@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   text-align: right;
   justify-content: space-evenly;
+  overflow: auto;
   margin: auto;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -38,45 +39,79 @@
 }
   /* moves */
 .moves_display{
-  width: 1224px;
-  min-width: 427px;
-  margin: auto;
-  margin-top: 100px;
-  overflow-x: auto;
-  background-color: white;
-}
-.moves_cont{
   display: flex;
   flex-wrap: wrap;
-  text-align: center;
-  justify-content: space-around;
+  text-align: left;
+  overflow-x:  scroll;
   margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
   border-radius: 10px;
+  padding-bottom: 30px;
+  min-width: 427px;
   background-color: #ffffff;
 }
-.move_row{
+.moves_cont{
   flex-wrap: wrap;
   text-align: center;
-  justify-content: space-around;
+  border-radius: 10px;
+  min-width: 827px;
+}
+.move_row{
+  text-align: left;
+  justify-content: left;
   width: 100%;
-  max-width: 1224px;
   min-width: 427px;
+  border-bottom: solid black 1px;
 }
 .move_name{
-  width: 100px;
+  width: 120px;
+  text-align: left;
+  padding-left: 20px;
+}
+.move_class{
+  width: 120px;
   height: 20px;
-  margin-left: 0;
-  margin-right: auto;
+  text-align: left;
+  
 }
 .move_type{
-  margin-left: 0;
-  margin-right: auto;
+width: 70px;
+text-align: left;
 }
 .move_brif{
   width: 300px;
+  text-align: left;
+  
 }
 .move_numbers{
-  width: 30px;
+  width: 50px;
   margin-left: auto;
   padding-right: 20px;
+  padding-left: 20px;
+
+}
+.table_header{
+  height: 40px;
+  background-color: rgb(90, 77, 77);
+  border-bottom: solid black 2px;
+}
+
+
+@media screen and (min-width : 1224px){
+  .moves_display{
+    width: 1224px;
+    
+  }
+  .moves_cont{
+    width: 1224px;
+  }
+}
+@media screen and (max-width : 1224px){
+  .moves_display{
+    max-width: 824px;
+  }
+  .moves_cont{
+    max-width: 1224px;
+  }
 }

@@ -17,35 +17,23 @@ function All_Moves() {
          getMoves()
      }, [])
      return <div >
-     {movesarray.length >16 ?  <div >
+     {movesarray.length >160 ?  <div >
          <table className='moves_display'>
-             {/* <thead>
+             <thead className='table_header' >
                  <tr >
-                     <th>Name</th>
-                     <th>Type </th>
-                     <th>Category</th>
-                     <th>Power</th>
-                     <th>Accurcy</th>
-                     <th>PP</th>
-                     <th>Efect</th>
+                     <td className='moves_cont'>
+                          <th className='move_name'>Name</th> <th className='move_type'>Type </th> <th className='move_numbers'>Power</th> <th className='move_numbers'>PP</th> <th className='move_class'>Category</th>
+                      <th >Efect</th>
+                      </td>
                  </tr>
-             </thead> */}
+
+             </thead>
              <tbody>
              {movesarray.map((item,i) => {
-                return <tr> <td>
+                return <div className='move_row'> 
                 <Moves  key2={item.name} key={i}   />
-                      </td>
-               </tr>})}
-                 
-                 {/* <tr>
-                     <td>alskdjasl</td>
-                     <td>alskdjasl</td>
-                     <td>alskdjasl</td>
-                     <td>alskdjasl</td>
-                     <td>alskdjasl</td>
-                     <td>alskdjasl</td>
-                     <td>alskdjasl</td>
-                 </tr> */}
+   
+               </div>})}
              </tbody>
 
          </table>

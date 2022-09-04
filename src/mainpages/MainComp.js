@@ -53,14 +53,16 @@ function MainComp() {
       <div className='navbar_cont'>
         <div className='header'><img src={Logo} /></div>
         <div className='navbar'>
-        <ul>
+          <ul className='links_nav'>
+        <div >
           <Link to='/pokemon'>Home</Link>
-        </ul>
-        <ul>
+        </div>
+        <div>
         <Link to='/move'>moves</Link>
-        </ul>
-        <ul>
+        </div>
+        <div>
         <Link to='/type'>types</Link>
+        </div>
         </ul>
         <ul>
         <div><SearchBar placeholder={'Search...'}  data={pokemonsarray} data2={typesarray} data3={movesarray}/></div>
