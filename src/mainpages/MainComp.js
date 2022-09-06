@@ -65,7 +65,7 @@ function MainComp() {
         </div>
         </ul>
         <ul>
-        <div><SearchBar placeholder={'Search...'}  data={pokemonsarray} data2={typesarray} data3={movesarray}/></div>
+        <div className='serchcont'><SearchBar placeholder={'Search...'}  data={pokemonsarray} data2={typesarray} data3={movesarray}/></div>
         </ul>
         </div>
       </div>
