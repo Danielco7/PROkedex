@@ -3,6 +3,7 @@ import { useNavigate  } from "react-router-dom";
 import Axios from 'axios'
 import Pokemons from './pokmons';
 import Types from './Types';
+import typesimg from '../typechart.png'
 
 
 function All_Types() {
@@ -35,9 +36,9 @@ function All_Types() {
             return <div onClick={()=>handleClick(item.name)} >
       <Types  key2={item} key={i}  />
      </div>})}
-          </div>:null}
+     <img src={typesimg} alt="Logo" /></div>:null}
+          
        
-
     </div>;
 }
 
