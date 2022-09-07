@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {useParams,useNavigate} from "react-router-dom";
 import Axios from 'axios'
 import Moves from './Moves';
+import Pokemons from './pokmons';
 
 
 
@@ -25,6 +26,10 @@ function Pokemon_Display(match) {
         id:'',
         name:''
     })
+    const [pokemonchain, setpokemonchain] = useState([])
+    const [pokemonchainlvl, setpokemonchainlvl] = useState([])
+    const [pokemontext, setpokemontext] = useState('')
+
 
     const navigate = useNavigate();
     const params= useParams();
@@ -35,6 +40,25 @@ function Pokemon_Display(match) {
         async function getPokemon() {
 
             const { data } = await Axios.get(`https://pokeapi.co/api/v2/pokemon/${params.id}`)
+            const { data:data1 } = await Axios.get(data.species.url)
+            const { data:data3 } = await Axios.get(data1.evolution_chain.url)
+            const newtext =data1.flavor_text_entries[0].flavor_text.split(/\\/);
+            console.log(newtext);
+            setpokemontext(newtext);
+            if (data3.chain.evolves_to.length!=0) {
+                if (data3.chain.evolves_to[0].species.url.slice(42,data3.chain.evolves_to[0].species.url.length-1)<152) {
+            await setpokemonchain(oldArray => [...oldArray, data3.chain.species.name])
+            await setpokemonchainlvl(oldArray => [...oldArray, data3.chain.evolves_to[0].evolution_details[0].min_level])
+            await setpokemonchain(oldArray => [...oldArray, data3.chain.evolves_to[0].species.name])
+                }
+        
+            if (data3.chain.evolves_to[0].evolves_to.length!=0) {
+                if (data3.chain.evolves_to[0].evolves_to[0].species.url.slice(42,data3.chain.evolves_to[0].evolves_to[0].species.url.length-1)<152) {
+            await setpokemonchain(oldArray => [...oldArray, data3.chain.evolves_to[0].evolves_to[0].species.name])
+            await setpokemonchainlvl(oldArray => [...oldArray, data3.chain.evolves_to[0].evolves_to[0].evolution_details[0].min_level])
+            }
+        }
+        }
             const TM_move=[]
             const LV_move=[]
             for (let i = 0; i < data.moves.length; i++) {
@@ -42,10 +66,8 @@ function Pokemon_Display(match) {
                 if (element.version_group_details[0].version_group.name =="red-blue") {
                     if (element.version_group_details[0].move_learn_method.name=="machine") {
                         TM_move.push(element) 
-                        console.log(TM_move);
                     }else{
                         LV_move.push(element)
-                        console.log(LV_move);
                     }
                 }
             }
@@ -60,7 +82,6 @@ function Pokemon_Display(match) {
                 LV_moves: LV_move,
                 TM_moves: TM_move,
             })
-            console.log(data.moves);
             if (data.types.length>1) {
                 await setpokemon({
                     name: data.name,
@@ -100,10 +121,9 @@ function Pokemon_Display(match) {
 
 
      function handleClick_Type(e) {
-         console.log(pokemon);
-        // navigate(`/type/${e}`);
-        // window.location.reload();
-        // window.scrollTo(0, 0);
+        navigate(`/type/${e}`);
+        window.location.reload();
+        window.scrollTo(0, 0);
      }
     
 
@@ -113,7 +133,8 @@ function Pokemon_Display(match) {
    <div className='pokemon_nav'>
    {pokemonbefor.name!=''?<button className='pre_pokemon' onClick={()=>handleClick_Pokemon(pokemonbefor.name)}>#{pokemonbefor.id} {pokemonbefor.name}</button>:<div></div>}
    {pokemonafter.name!=''?<button className='next_pokemon' onClick={()=>handleClick_Pokemon(pokemonafter.name)}>#{pokemonafter.id} {pokemonafter.name} </button>:<div></div>}
-   </div>
+   </div><br></br>
+   <div>{pokemontext}</div>
    <img className='pokemon_img' src={`https://img.pokemondb.net/artwork/large/${params.id}.jpg`}></img>
    <div className='pokemon_data'>
        <h1>Porkédex data</h1>
@@ -131,6 +152,13 @@ function Pokemon_Display(match) {
        <p>weight: {pokemon.weight}</p>
 
    </div><br></br>
+   <div className='pokemons_display_chain'>
+   {pokemonchain.map((item,i) => {
+            return <div  >
+      <Pokemons  key2={item} key={i}/> {pokemonchainlvl[i]!=undefined?<div className='chainlvl'><div>lvl {pokemonchainlvl[i]}</div><div className="button9"></div></div>:null}
+     </div>})}
+   </div>
+
     <div >
     <h1>move lernt by this pokemon</h1>
     <table className='moves_display'>

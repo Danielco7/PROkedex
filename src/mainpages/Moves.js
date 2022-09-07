@@ -11,10 +11,9 @@ function Moves(props) {
     useEffect(() => {
         async function getPokemons() {
           const { data } = await Axios.get(`https://pokeapi.co/api/v2/move/${props.key2}`)
-        //   console.log(data.flavor_text_entries[1].flavor_text);
           if (data.generation.name=="generation-i") {
               await setmove({
-                  name: props.key2,
+                  name: data.name,
                   number: data.id,
                   brif: data.flavor_text_entries[1].flavor_text,
                   type1: data.type.name,

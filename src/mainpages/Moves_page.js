@@ -12,12 +12,11 @@ function All_Moves() {
         async function getMoves() {
             const { data } = await Axios.get('https://pokeapi.co/api/v2/move/?offset=0&limit=165')
             await setmovesarray(data.results)
-  
      }
          getMoves()
      }, [])
      return <div >
-     {movesarray.length >160 ?  <div >
+     {movesarray.length >163 ?  <div >
          <table className='moves_display'>
              <thead className='table_header' >
                  <tr >
@@ -32,7 +31,6 @@ function All_Moves() {
              {movesarray.map((item,i) => {
                 return <div className='move_row'> 
                 <Moves  key2={item.name} key={i}   />
-   
                </div>})}
              </tbody>
 

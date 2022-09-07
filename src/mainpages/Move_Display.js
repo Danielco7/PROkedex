@@ -19,7 +19,6 @@ function Move_Display(match) {
     useEffect(() => {
         
         async function getMove() {
-            console.log(params.id);
 
             const { data } = await Axios.get(`https://pokeapi.co/api/v2/move/${params.id}`)
             for (let i = 0; i < data.learned_by_pokemon.length; i++) {

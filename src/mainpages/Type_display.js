@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import {useParams,useNavigate} from "react-router-dom";
 import Axios from 'axios'
 import Pokemons from './pokmons';
+import Moves from './Moves';
 
 
 
 function Type_Display(match) {
     const [pokemonsarray, setpokemonsarray] = useState([])
+    const [movesarray, setmovesarray] = useState([])
 
 
     const navigate = useNavigate();
@@ -23,11 +25,16 @@ function Type_Display(match) {
                 const elem2= await Number(element.pokemon.url.slice(34,element.pokemon.url.length-1))
                 if (elem2<152) {
                         await setpokemonsarray(oldArray => [...oldArray, elem2])
-                    
                 }
-
-                
             }
+                for (let i = 0; i < data.moves.length; i++) {
+                    const element = data.moves[i];
+                    const elem2= await Number(element.url.slice(31,element.url.length-1))
+                    if (elem2<166) {
+                            await setmovesarray(oldArray => [...oldArray, elem2])
+                            console.log(elem2);
+                    }
+                }
      }
          getPokemon()
      }, [])
@@ -51,6 +58,26 @@ function Type_Display(match) {
      </div>})}
           </div>:null}
    {/* <img className='pokimg' src={`https://img.pokemondb.net/artwork/large/${params.id}.jpg`}></img> */}
+   <div >
+         <table className='moves_display'>
+             <thead className='table_header' >
+                 <tr >
+                     <td className='moves_cont'>
+                          <th className='move_name'>Name</th> <th className='move_type'>Type </th> <th className='move_numbers'>Power</th> <th className='move_numbers'>PP</th> <th className='move_class'>Category</th>
+                      <th >Efect</th>
+                      </td>
+                 </tr>
+
+             </thead>
+             <tbody>
+             {movesarray.map((item,i) => {
+                return <div className='move_row'> 
+                <Moves  key2={item} key={i}   />
+               </div>})}
+             </tbody>
+
+         </table>
+       </div>
 
     </div>;
 }
