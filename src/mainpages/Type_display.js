@@ -45,9 +45,7 @@ function Type_Display(match) {
      }
     
 
-    return <div>
-        <br></br>
-        <br></br>
+    return <div className='pokemon_info_cont' style={{paddingTop: "20px"}}>
         <div className={`${params.id} types`}>
    {params.id}
         </div>
@@ -59,6 +57,7 @@ function Type_Display(match) {
           </div>:null}
    {/* <img className='pokimg' src={`https://img.pokemondb.net/artwork/large/${params.id}.jpg`}></img> */}
    <div >
+   <h1>move learn in this type</h1>
          <table className='moves_display'>
              <thead className='table_header' >
                  <tr >

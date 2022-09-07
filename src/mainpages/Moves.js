@@ -46,7 +46,7 @@ function Moves(props) {
     <div className='moves_cont'>
        
                 <tr >
-                    <td className='move_name' onClick={()=>handleClick(move.name)}>{move.name}</td>
+                    <td className='move_name' style={{color:'#5c91fc' ,fontSize: '18px'}} onClick={()=>handleClick(move.name)}>{move.name}</td>
                     <td onClick={()=>handleClick_Type(move.type1)} className={`${move.type1} types_small`}>{move.type1}</td>
                     {move.power!==null?<td className='move_numbers'>{move.power}</td>:<td className='move_numbers'>-</td>}
                     {move.pp!==null?<td className='move_numbers'>{move.pp}</td>:<td className='move_numbers'>-</td>}

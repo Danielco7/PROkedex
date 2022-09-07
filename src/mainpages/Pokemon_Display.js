@@ -116,7 +116,7 @@ function Pokemon_Display(match) {
      function handleClick_Pokemon(e) {
         navigate(`/pokemon/${e}`);
         window.location.reload();
-        window.scrollTo(0, 100);
+        window.scrollTo(0, 0);
      }
 
 

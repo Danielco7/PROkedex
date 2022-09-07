@@ -5,7 +5,6 @@
   min-width: 427px;
   margin-top: 400px;
   padding-top: 240px;
-  padding-bottom: 840px;
   margin: auto;
   margin-top: 40px;
   position: relative;
@@ -112,9 +111,7 @@
     position: absolute;
     margin-left: 70px;
   }
-  .pokemon_info_cont{
-    height: 700px;
-  }
+
   .chainlvl{
     z-index: 4;
     margin-top: -160px;
@@ -136,9 +133,7 @@
   .pokemon_img{
     margin-top: 30px;
   }
-  .pokemon_info_cont{
-    height: 1200px;
-  }
+ 
   .movestotheleft{
     display: flex;
     flex-direction: column;
@@ -154,7 +149,7 @@
     margin-left: 20px;
   }
   .button9 {
-    margin-top: -40px;
+    margin-top: -35px;
     margin-right: 0px;
   }
   .button9:after {

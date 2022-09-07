@@ -70,19 +70,19 @@ function SearchBar({ placeholder, data, data2 ,data3 }) {
   return <div className="search">
     
       <div className="searchInputs">
+        
         <input
           type="text"
           placeholder={placeholder}
           value={wordEntered}
           onChange={Serch}
-        />
-        <div className="searchIcon">
-          {/* {filteredData.length === 0 ? (
-            <SearchIcon />
-          ) : (
-            // <CloseIcon id="clearBtn" onClick={clearInput} />
-          )} */}
+        /><div className="serach_svg"><svg width="32" height="32" viewBox="0 0 67 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M33.5 61.4167C48.9184 61.4167 61.4167 48.9184 61.4167 33.5C61.4167 18.0816 48.9184 5.58334 33.5 5.58334C18.0816 5.58334 5.58333 18.0816 5.58333 33.5C5.58333 48.9184 18.0816 61.4167 33.5 61.4167Z" stroke="black" stroke-width="4.1875" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M33.5 41.875C35.7212 41.875 37.8514 40.9926 39.422 39.422C40.9926 37.8514 41.875 35.7212 41.875 33.5C41.875 31.2788 40.9926 29.1486 39.422 27.578C37.8514 26.0074 35.7212 25.125 33.5 25.125C31.2788 25.125 29.1486 26.0074 27.578 27.578C26.0074 29.1486 25.125 31.2788 25.125 33.5C25.125 35.7212 26.0074 37.8514 27.578 39.422C29.1486 40.9926 31.2788 41.875 33.5 41.875V41.875Z" stroke="black" stroke-width="4.1875" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M5.58333 33.5H25.125M41.875 33.5H61.4167" stroke="black"  stroke-width="4.1875"/>
+        </svg>
         </div>
+       
       </div>
       {filteredData.length != 0 && (
         <div className="dataResult">

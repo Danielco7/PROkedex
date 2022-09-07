@@ -44,7 +44,9 @@ function MainComp() {
      Get_Pokemons()
 }, [])
 
-
+function scrollClick(e) {
+  window.scrollTo(100,0);
+}
   const Pokemon =({match})=>{
     return(<h1>user {match.params.username}</h1>)
   }
@@ -54,13 +56,13 @@ function MainComp() {
         <div className='header'><img src={Logo} /></div>
         <div className='navbar'>
           <ul className='links_nav'>
-        <div >
+        <div className='links' >
           <Link to='/pokemon'>Home</Link>
         </div>
-        <div>
+        <div className='links'>
         <Link to='/move'>moves</Link>
         </div>
-        <div>
+        <div className='links'>
         <Link to='/type'>types</Link>
         </div>
         </ul>
@@ -79,6 +81,7 @@ function MainComp() {
         <Route path='/type/:id' element={<Type_Display />} />
 
         </Routes >
+        <div onClick={()=>scrollClick('e')} id="scrolltotop" title="Go to top">Top</div>
     </Router>
 }
 

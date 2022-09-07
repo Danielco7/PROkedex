@@ -12,7 +12,10 @@
     min-width: 427px;
 }
 a{
-color: aliceblue;
+color: rgb(255, 255, 255);
+}
+a:hover{
+  color: rgb(0, 221, 255);
 }
 
 .navbar{
@@ -23,7 +26,6 @@ color: aliceblue;
     max-height: 55px;
     background-color: rgb(68, 68, 68);
     border-radius: 10px;
-    color: aliceblue;
 }  
 .links_nav{
   width: 50%;
@@ -34,28 +36,46 @@ color: aliceblue;
   padding-right: 30px;
   justify-content: space-between;
 }
+.links{
+  color: red;
+}
+
 .h123{
   width: 100px;
   background-color: rgb(0, 136, 255);
   text-align: left;
 }
+.searchInputs{
+  display: flex;
+}
 .serchcont{
   width: 100%;
+  color: white;
 }
 .search  {
-  width: 200px;
+  width: 400px;
   height: 25px;
 }
-  .search input {
+  .search input[type="text"] {
     border: 0;
     position: relative;
-    border-radius: 2px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
+    border-radius: 15px;
     height: 30px;
-    width: 100%;
+    width: 99%;
+    background-color: rgb(109, 108, 108);
+    color: white;
+    font-size: 18px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
-  
+  ::placeholder{
+    color: white;
+  }
+  .serach_svg{
+    margin-left: -32px;
+    z-index: 2;
+    
+  }
   .searchIcon {
     height: 60px;
     width: 50px;
@@ -71,13 +91,16 @@ color: aliceblue;
   }
   
   .dataResult {
-    margin-top: -55px;
+    margin-top: 0px;
     width: 100%;
     height: 200px;
-    background-color: rgb(0, 0, 0);
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: rgb(99, 136, 153);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     overflow: hidden;
     overflow-y: auto;
+    padding-right: 2px;
   }
   
   .dataResult::-webkit-scrollbar {
@@ -88,27 +111,38 @@ color: aliceblue;
     width: 98%;
     height: 50px;
     padding-right: 6px;
-    border: 1px solid rgb(255, 255, 255);
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: rgb(255, 255, 255);
   }
-  
+  .dataItem:hover{
+    background-color: rgba(211, 211, 211, 0.132);
+    cursor: pointer;
+    font-size: 19px;
+
+  }
   .dataItem p {
     margin-left: 10px;
   }
   a {
     text-decoration: none;
   }
-  
-  a:hover {
-    background-color: lightgrey;
-  }
-  
-  #clearBtn {
+  #scrolltotop{
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: rgb(205, 100, 100);
+    color: white;
     cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
   }
+ 
   @media screen and (min-width : 850px){
     .navbar{
       display: flex;

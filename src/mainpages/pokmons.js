@@ -59,7 +59,7 @@ function Pokemons(props) {
      function handleClick(e) {
         navigate(`/pokemon/${e}`);
         window.location.reload();
-        window.scrollTo(0, 100);
+        window.scrollTo(0, 0);
 
      }
      function handleClick_Type(e) {

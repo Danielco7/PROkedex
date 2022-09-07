@@ -30,7 +30,7 @@ function All_Types() {
         navigate(`/type/${e}`);
      }
 
-    return <div>
+    return <div >
         {typesarray.length >16 ?  <div className='pokemons_display'>
         {typesarray.map((item,i) => {
             return <div onClick={()=>handleClick(item.name)} >
