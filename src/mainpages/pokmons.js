@@ -20,7 +20,9 @@ function Pokemons(props) {
 
     const navigate = useNavigate();
 
-
+   
+    
+    
     useEffect(() => {
         async function getPokemons() {
 
