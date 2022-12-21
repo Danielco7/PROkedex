@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/PROkedex/static/css/main.15593d3c.css",
-    "main.js": "/PROkedex/static/js/main.48bcae9e.js",
-    "static/js/787.c4e7f8f9.chunk.js": "/PROkedex/static/js/787.c4e7f8f9.chunk.js",
-    "static/media/typechart.png": "/PROkedex/static/media/typechart.59f73142c6103b5fb1df.png",
-    "static/media/Pokemon Solid.ttf": "/PROkedex/static/media/Pokemon Solid.5d60be1f7ff5fcc21fc1.ttf",
-    "static/media/logo.png": "/PROkedex/static/media/logo.46bc5ea190b04531bf42.png",
-    "static/media/Pokemon GB.ttf": "/PROkedex/static/media/Pokemon GB.6211ee48ea626f34681e.ttf",
-    "static/media/logo.svg": "/PROkedex/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/PROkedex/index.html",
-    "main.15593d3c.css.map": "/PROkedex/static/css/main.15593d3c.css.map",
-    "main.48bcae9e.js.map": "/PROkedex/static/js/main.48bcae9e.js.map",
-    "787.c4e7f8f9.chunk.js.map": "/PROkedex/static/js/787.c4e7f8f9.chunk.js.map"
+    "main.css": "/pokemon/static/css/main.b6e192f6.css",
+    "main.js": "/pokemon/static/js/main.2eb72a93.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/pokemon/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/typechart.png": "/pokemon/static/media/typechart.59f73142c6103b5fb1df.png",
+    "static/media/Pokemon Solid.ttf": "/pokemon/static/media/Pokemon Solid.5d60be1f7ff5fcc21fc1.ttf",
+    "static/media/logo.png": "/pokemon/static/media/logo.46bc5ea190b04531bf42.png",
+    "static/media/Pokemon GB.ttf": "/pokemon/static/media/Pokemon GB.6211ee48ea626f34681e.ttf",
+    "static/media/logo.svg": "/pokemon/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/pokemon/index.html",
+    "main.b6e192f6.css.map": "/pokemon/static/css/main.b6e192f6.css.map",
+    "main.2eb72a93.js.map": "/pokemon/static/js/main.2eb72a93.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/pokemon/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.15593d3c.css",
-    "static/js/main.48bcae9e.js"
+    "static/css/main.b6e192f6.css",
+    "static/js/main.2eb72a93.js"
   ]
 }
