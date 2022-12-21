@@ -5,6 +5,7 @@ import {
   Route,
   Redirect,
   Link,
+  HashRouter
 } from "react-router-dom";
 import Axios from "axios";
 import { withRouter } from "react-router";
@@ -58,7 +59,7 @@ function MainComp() {
   };
 
   return (
-    <Router>
+    <HashRouter>
       <div className="navbar_cont">
         <div className="header">
           <img src={Logo} />
@@ -99,7 +100,7 @@ function MainComp() {
       <div onClick={() => scrollClick("e")} id="scrolltotop" title="Go to top">
         Top
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
