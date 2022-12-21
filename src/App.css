@@ -1,18 +1,32 @@
 @font-face {
   font-family: pokemontype;
-  src: URL('./Pokemon\ GB.ttf') format('truetype');
+  src: URL("./Pokemon\ GB.ttf") format("truetype");
 }
 
 html {
-  background:
-  radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent),
-  radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent) 50px 50px,
-  linear-gradient(#A8B1BB 8px, transparent 8px) 0 -4px,
-  linear-gradient(90deg, #A8B1BB 8px, transparent 8px) -4px 0;
+  background: radial-gradient(
+      circle,
+      transparent 20%,
+      slategray 20%,
+      slategray 80%,
+      transparent 80%,
+      transparent
+    ),
+    radial-gradient(
+        circle,
+        transparent 20%,
+        slategray 20%,
+        slategray 80%,
+        transparent 80%,
+        transparent
+      )
+      50px 50px,
+    linear-gradient(#a8b1bb 8px, transparent 8px) 0 -4px,
+    linear-gradient(90deg, #a8b1bb 8px, transparent 8px) -4px 0;
   background-color: slategray;
-  background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px;
+  background-size: 100px 100px, 100px 100px, 50px 50px, 50px 50px;
   /* scroll-behavior: smooth; */
- }
+}
 .App {
   text-align: center;
   width: 100%;
@@ -62,7 +76,7 @@ background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px; */
   }
 }
 
-.pok_display_cont{
+.pok_display_cont {
   background-color: white;
   border-radius: 10px;
   max-width: 1224px;
@@ -71,7 +85,7 @@ background-size:100px 100px, 100px 100px, 50px 50px, 50px 50px; */
   margin-top: 40px;
 }
 
-.niso{
+.niso {
   width: 900px;
   height: 900px;
   background-color: red;

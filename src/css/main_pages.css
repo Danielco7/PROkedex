@@ -1,5 +1,5 @@
 /* pokemons */
-.pokemons_display{
+.pokemons_display {
   display: flex;
   flex-wrap: wrap;
   text-align: right;
@@ -14,36 +14,38 @@
   max-width: 1204px;
   min-width: 427px;
   background-color: #ffffff;
- }
-.pokemons_display>div:hover{
-  cursor: pointer;
 }
-.brif_info{
+.pokemons_display > div {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.brif_info {
   text-align: center;
   margin-top: -20px;
 }
-.pokimg{
+.pokimg {
   width: 174px;
 }
-.main_page_pokemon_name{
+.main_page_pokemon_name {
   display: inline;
   color: #30549b;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-family: "M PLUS Rounded 1c", sans-serif;
 }
-.main_page_pokemon_name:hover{
+.main_page_pokemon_name:hover {
   color: #5c91fc;
   border-bottom-style: solid;
   border-bottom-color: rgb(255, 80, 80);
 }
-.types_under_name{
+.types_under_name {
   margin-top: 5px;
 }
-  /* moves */
-.moves_display{
+/* moves */
+.moves_display {
   display: flex;
   flex-wrap: wrap;
   text-align: left;
-  overflow-x:  scroll;
+  overflow-x: scroll;
   margin: auto;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -52,73 +54,71 @@
   min-width: 427px;
   background-color: #ffffff;
 }
-.moves_cont{
+.moves_cont {
   flex-wrap: wrap;
   text-align: center;
   border-radius: 10px;
   min-width: 827px;
 }
-.move_row{
+.move_row {
   text-align: left;
   justify-content: left;
   width: 100%;
   min-width: 427px;
   border-bottom: solid black 1px;
 }
-.move_name{
+.move_name {
   width: 120px;
   text-align: left;
   padding-left: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.move_name:hover{
+.move_name:hover {
   width: 120px;
   text-align: left;
   padding-left: 20px;
 }
-.move_class{
+.move_class {
   width: 120px;
   height: 20px;
   text-align: left;
-  
 }
-.move_type{
-width: 70px;
-text-align: left;
+.move_type {
+  width: 70px;
+  text-align: left;
 }
-.move_brif{
+.move_brif {
   width: 300px;
   text-align: left;
-  
 }
-.move_numbers{
+.move_numbers {
   width: 50px;
   margin-left: auto;
   padding-right: 20px;
   padding-left: 20px;
-
 }
-.table_header{
+.table_header {
   height: 40px;
   background-color: rgb(90, 77, 77);
   border-bottom: solid black 2px;
 }
 
-
-@media screen and (min-width : 1224px){
-  .moves_display{
+@media screen and (min-width: 1224px) {
+  .moves_display {
     width: 1224px;
-    
   }
-  .moves_cont{
+  .moves_cont {
     width: 1224px;
   }
 }
-@media screen and (max-width : 1224px){
-  .moves_display{
+@media screen and (max-width: 1224px) {
+  .moves_display {
     max-width: 824px;
   }
-  .moves_cont{
+  .moves_cont {
     max-width: 1224px;
+  }
+  .typeimg {
+    width: 450px;
   }
 }
