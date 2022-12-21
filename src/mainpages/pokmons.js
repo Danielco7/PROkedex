@@ -18,50 +18,54 @@ function Pokemons(props) {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    async function getPokemons() {
-      const { data } = await Axios.get(
-        `https://pokeapi.co/api/v2/pokemon/${props.key2}`
-      );
-      // let allpok=data.pokemon_entries
-      // let pokomons=allpok.slice(0,151)
-      await setpokemon(data);
-      await setpokemon({
-        name: data.name,
-        number: data.id,
-        img: data.sprites.front_default,
-        height: data.height,
-        weight: data.weight,
-        stats: data.stats,
-        type1: data.types[0].type.name,
-        type2: "1",
-      });
-      if (data.types.length > 1) {
-        await setpokemon({
-          name: data.name,
-          number: data.id,
-          img: data.sprites.front_default,
-          height: data.height,
-          weight: data.weight,
-          stats: data.stats,
-          type1: data.types[0].type.name,
-          type2: data.types[1].type.name,
-        });
-      }
-    }
-    getPokemons();
-  }, []);
 
-  function handleClick(e) {
-    navigate(`/pokemon/${e}`);
-    window.location.reload();
-    window.scrollTo(0, 0);
-  }
-  function handleClick_Type(e) {
-    navigate(`/type/${e}`);
-    window.location.reload();
-    window.scrollTo(0, 0);
-  }
+    useEffect(() => {
+        async function getPokemons() {
+
+                      const { data } = await Axios.get(`https://pokeapi.co/api/v2/pokemon/${props.key2}`)
+            // let allpok=data.pokemon_entries
+            // let pokomons=allpok.slice(0,151)
+            await setpokemon(data)
+            await setpokemon({
+                name: data.name,
+                number: data.id,
+                img: data.sprites.front_default,
+                height: data.height,
+                weight: data.weight,
+                stats: data.stats,
+                type1: data.types[0].type.name,
+                type2:'1',
+            })
+            if (data.types.length>1) {
+                await setpokemon({
+                    name: data.name,
+                    number: data.id,
+                    img: data.sprites.front_default,
+                    height: data.height,
+                    weight: data.weight,
+                    stats: data.stats,
+                    type1: data.types[0].type.name,
+                    type2: data.types[1].type.name,
+                })
+            }
+
+        
+     }
+         getPokemons()
+     }, [])
+     
+     function handleClick(e) {
+        navigate(`/pokemon/${e}`);
+        window.location.reload();
+        window.scrollTo(0, 0);
+
+     }
+     function handleClick_Type(e) {
+        navigate(`/type/${e}`);
+        window.location.reload();
+        window.scrollTo(0,0);
+
+     }
 
   return (
     <div>
@@ -107,4 +111,4 @@ function Pokemons(props) {
     </div>
   );
 }
-export default Pokemons;
+export default Pokemons
